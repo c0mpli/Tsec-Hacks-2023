@@ -75,12 +75,14 @@ app.post('/sendemail', async (req,res)=>{
    console.log(error);
     } else {
       console.log('Email sent: ' + info.response);
+      return res.json({status:"ok"})
     }
   });
 })
 
+app.post('/sendwhatsapp',async(req,res)=>{
 
-
+})
 
 app.post('/register', async (req,res)=>{
     var username = req.body.username
