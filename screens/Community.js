@@ -13,7 +13,6 @@ const Community = () => {
     },[])
   return (
     <SafeAreaView>
-        
             <View className='pt-5 pb-5 justify-center items-center'>
                 <Text className='font-bold'>Community</Text>
             </View>
