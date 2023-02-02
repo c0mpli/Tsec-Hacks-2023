@@ -65,7 +65,7 @@ app.post('/sendemail', async (req,res)=>{
     attachments:[
         {
             filename:filename,
-            path:path
+            path:"../resume.pdf"
         }
     ]
   };
