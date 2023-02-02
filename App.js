@@ -18,6 +18,7 @@ import AllJobs from './screens/company/AllJobs';
 
 import InvoiceScreen from './screens/InvoiceScreen';
 import Ani2Screen from './screens/Ani2Screen';
+import InitialScreen from './screens/InitialScreen';
 
 
 
@@ -30,24 +31,31 @@ export default function App() {
     <TailwindProvider>
     <Stack.Navigator>
 
+    <Stack.Screen name="Initital" component={InitialScreen} />
+    <Stack.Screen name="Data1" component={Data1Screen} />
+    <Stack.Screen name="Dash" component={Dashboard} />
+    
+
+    <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Screen name="AllJ" component={AllJobs} />
     <Stack.Screen name="Ani2" 
     component={Ani2Screen} 
     options={{presentation:'fullScreenModal', headerShown:false}}
     />
-    <Stack.Screen name="AllJ" component={AllJobs} />
+    
 
     <Stack.Screen name="Data5" component={Data5Screen} />
     <Stack.Screen name="Invoice" component={InvoiceScreen} />
     
     <Stack.Screen name="Commu" component={Community} />
-    <Stack.Screen name="Data1" component={Data1Screen} />
+    
     <Stack.Screen name="Data3" component={Data3Screen} />
     
     <Stack.Screen name="Data2" component={Data2Screen} />
     <Stack.Screen name="Data4" component={Data4Screen} />
     
     
-    <Stack.Screen name="Home" component={HomeScreen} />
+    
 
         
       </Stack.Navigator>

@@ -39,7 +39,7 @@ app.use(
       store: store,
     })
   );
-
+  mongoose.set("strictQuery", false);
 mongoose.connect(URI)
 
 var db = mongoose.connection

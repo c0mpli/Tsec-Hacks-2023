@@ -5,15 +5,21 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Speech from 'expo-speech';
 
 
 
 const Data1Screen = () => {
+    const speak = () => {
+        const speechOptions ={rate:0.75,language:"en-GB"}
+        const thingToSay = 'Please enter your name.....  Once done, click on bottom right corner';
+        Speech.speak(thingToSay,speechOptions);
+      };
     const navigation = useNavigation();
     useLayoutEffect(()=>
     navigation.setOptions({
         headerShown: false,
-    })
+    }),speak()
     )
     const [Name, setName] = useState('')
     const saveName = async()=>{
