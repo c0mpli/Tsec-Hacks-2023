@@ -12,6 +12,7 @@ import Data4Screen from './screens/Data4Screen';
 import Data5Screen from './screens/Data5Screen';
 
 import Dashboard from './screens/company/Dashboard';
+import Community from './screens/Community';
 
 
 
@@ -22,7 +23,7 @@ export default function App() {
     <NavigationContainer>
     <TailwindProvider>
     <Stack.Navigator>
-
+    <Stack.Screen name="Commu" component={Community} />
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Data3" component={Data3Screen} />
     
