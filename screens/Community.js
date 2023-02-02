@@ -105,7 +105,9 @@ const Community = () => {
         </ScrollView>
         <View className="absolute bottom-16 left-0 space-x-9  bg-white w-full pt-2 pl-12  flex-row  h-20">
     
-    <TouchableOpacity className="flex items-center" >
+    <TouchableOpacity
+    onPress={()=>{navigation.navigate("Home")}}
+    className="flex items-center" >
       <HomeIcon size={36} color={"#0A2647"}/>
       <Text>Home</Text>
     </TouchableOpacity>

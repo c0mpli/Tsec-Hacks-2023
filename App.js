@@ -20,6 +20,11 @@ import AllJobs from './screens/company/AllJobs';
 import Ani2Screen from './screens/Ani2Screen';
 import InitialScreen from './screens/InitialScreen';
 import JobScreen from './screens/JobScreen';
+import FreeScreen from './screens/FreeScreen';
+import Job2Screen from './screens/Job2Screen';
+import FyScreen from './screens/FyScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import SettingScreen from './screens/SettingScreen';
 
 
 
@@ -31,10 +36,20 @@ export default function App() {
     <NavigationContainer>
     <TailwindProvider>
     <Stack.Navigator>
+<<<<<<< Updated upstream
 
+=======
+    <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Screen name="Job2" component={Job2Screen} />
+    <Stack.Screen name="Job" component={JobScreen} />
+    <Stack.Screen name="Fy" component={FyScreen} />
+    
+    <Stack.Screen name="Ani2"  component={Ani2Screen} />
+>>>>>>> Stashed changes
     
 
 
+<<<<<<< Updated upstream
 
     <Stack.Screen name="AllJ" component={AllJobs} />
     <Stack.Screen name="Initital" component={InitialScreen} />
@@ -42,10 +57,16 @@ export default function App() {
     <Stack.Screen name="Ani2"  component={Ani2Screen} />
     <Stack.Screen name="Commu" component={Community} />
     <Stack.Screen name="Home" component={HomeScreen} />
+=======
+    <Stack.Screen name="Profile" component={ProfileScreen} />
+    <Stack.Screen name="Initial" component={InitialScreen} />
+    <Stack.Screen name="set" component={SettingScreen} />
+    
+>>>>>>> Stashed changes
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Dash" component={Dashboard} />
     
-    
+    <Stack.Screen name="Free" component={FreeScreen} />
     
     
     
