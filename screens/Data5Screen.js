@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Print from 'expo-print';
 import { shareAsync } from 'expo-sharing';
 import {PdfCode} from "../Component/PdfCode";
-
+import axios from 'axios'
 
 const Data5Screen = () => {
     const navigation = useNavigation();
@@ -62,6 +62,20 @@ const printToFile = async () => {
         html
       });
       console.log('File has been saved to:', uri);
+      axios.post('http://192.168.0.146:5000/sendemail', {
+        path:uri,
+        subject:"New applicant to your job posting",
+        description:"Congratulations, you have a new applicant. Here is his resume.",
+        filename:"Resume.pdf"
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+
       await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
   
       set_Name('');

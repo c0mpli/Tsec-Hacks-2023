@@ -10,6 +10,7 @@ const DonationM = require('./model/donationM');
 const jobs = require('./model/jobs');
 require('dotenv').config()
 var cors = require('cors');
+const nodemailer = require("nodemailer");
 
 
 const app = express()
@@ -46,6 +47,42 @@ var db = mongoose.connection
 db.on('error',()=>console.log("Error connecting to db"))
 db.once('open',()=>console.log("Connected to db"))
 
+app.post('/sendemail', async (req,res)=>{
+ const {path,subject,description,filename}=req.body
+  let testAccount = await nodemailer.createTestAccount();
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'jashdoshi99@gmail.com',
+      pass: 'wqlilcnhfjxgfvdd'
+    }
+  });
+  const mailOptions = {
+    from: 'jashdoshi99@gmail.com',
+    to: 'gathavishesh@gmail.com',
+    subject: subject,
+    text: description,
+    attachments:[
+        {
+            filename:filename,
+            path:path
+        }
+    ]
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+   console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      return res.json({status:"ok"})
+    }
+  });
+})
+
+app.post('/sendwhatsapp',async(req,res)=>{
+
+})
 
 app.post('/register', async (req,res)=>{
     var username = req.body.username
