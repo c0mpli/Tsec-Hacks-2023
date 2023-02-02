@@ -5,6 +5,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Print from 'expo-print';
+import { shareAsync } from 'expo-sharing';
+import {PdfCode} from "../Component/PdfCode";
+
 
 const Data5Screen = () => {
     const navigation = useNavigation();
@@ -39,10 +43,7 @@ const Data5Screen = () => {
     <TouchableOpacity 
     onPress={()=>{
       saveName();
-      //compile all data in pdf 
-      // once combined send it to backend
-      // once sent to backend shift to tick animation wala screen
-      // navigation.navigate("Data5"); 
+      printToFile(); 
     }}
     className="absolute  bottom-40 right-0 ">
         <View className=" rounded-full w-48 h-48 "></View>
@@ -52,5 +53,28 @@ const Data5Screen = () => {
 </SafeAreaView>
   )
 }
+
+const printToFile = async () => {
+    let html = PdfCode();
+    // On iOS/android prints the given html. On web prints the HTML from the current page.
+    try{
+      const { uri } = await Print.printToFileAsync({
+        html
+      });
+      console.log('File has been saved to:', uri);
+      await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
+  
+      set_Name('');
+      setInvoice(dateFormat(now, "ddmmyyhhMss"));
+      Set_Address('');
+      Set_Mobile_No('');
+      
+  
+    }catch(err){
+        Alert.alert("Make shure You have Internet Connection or contact @+91 8530730017");
+    }
+  
+  
+  }
 
 export default Data5Screen
