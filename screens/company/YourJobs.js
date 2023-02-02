@@ -8,7 +8,7 @@ const YourJobs = () => {
     useEffect(() => {
         fetchData()
     }, [])
-    
+
   return (
     <View>
         <TouchableOpacity className='justify-center p-32' onPress={fetchData}>
