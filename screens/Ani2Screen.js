@@ -9,8 +9,12 @@ const Ani2Screen = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
+        navigation.setOptions({
+            headerShown: false,
+            
+        }),
         setTimeout(() => {
-            navigation.navigate("Hoo");
+            navigation.navigate("Home")
         },3000);
        
     },[]);

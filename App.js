@@ -19,6 +19,7 @@ import AllJobs from './screens/company/AllJobs';
 
 import Ani2Screen from './screens/Ani2Screen';
 import InitialScreen from './screens/InitialScreen';
+import JobScreen from './screens/JobScreen';
 
 
 
@@ -30,16 +31,15 @@ export default function App() {
     <NavigationContainer>
     <TailwindProvider>
     <Stack.Navigator>
-
+    <Stack.Screen name="Job" component={JobScreen} />
+    <Stack.Screen name="Ani2"  component={Ani2Screen} />
+    
     <Stack.Screen name="Initital" component={InitialScreen} />
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Dash" component={Dashboard} />
     
-    <Stack.Screen name="Ani2" 
-    component={Ani2Screen} 
-    options={{presentation:'fullScreenModal', headerShown:false}}
-    />
+    
     
     <Stack.Screen name="AllJ" component={AllJobs} />
     

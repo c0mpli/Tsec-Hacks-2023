@@ -54,7 +54,7 @@ const Data2Screen = () => {
     <TouchableOpacity 
     onPress={()=>{speak(); navigation.navigate("Data3"); saveName();}}
     className="absolute  bottom-48 right-0 ">
-        <View className="rounded-full bg-red-400 w-48 h-48 "></View>
+        <View className="rounded-full  w-48 h-48 "></View>
     </TouchableOpacity>
 
     
