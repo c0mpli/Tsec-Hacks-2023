@@ -26,15 +26,15 @@ const PostCard = (props) => {
             <Text className='mt-1'>{props.desc}</Text>
             <Image 
             source={{uri:props.image}}
-            className={props.image?"h-64 w-64 mt-5 bg-gray-300 p-4 rounded-xl":""}
+            className={props.image?"h-72 w-72 mt-5 bg-gray-300 p-4 rounded-xl":""}
             />
             
-            <View className='flex-row justify-between px-5 pt-2'>
-              <Image source={{uri:'https://cdn-icons-png.flaticon.com/512/1947/1947247.png'}} className='h-5 w-5'/>
+            <View className='flex-row gap-x-20 px-5 pt-4'>
+              <Image source={{uri:'https://cdn-icons-png.flaticon.com/512/1947/1947247.png'}} className='h-7 w-7'/>
               <Image source={{uri:'https://cdn-icons-png.flaticon.com/512/2951/2951188.png'}}
-              className='h-6 w-6'/>
+              className='h-8 w-8'/>
               <Image source={{uri:'https://cdn-icons-png.flaticon.com/512/1077/1077035.png'}}
-              className='h-4 w-4 mt-1'/>
+              className='h-6 w-6 mt-1'/>
             </View>
         </View>
     </View>

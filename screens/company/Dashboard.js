@@ -114,7 +114,9 @@ const Dashboard = () => {
       <HomeIcon size={36} color={"#0A2647"}/>
       <Text>Home</Text>
     </TouchableOpacity>
-    <TouchableOpacity className="flex items-center" >
+    <TouchableOpacity 
+    
+    className="flex items-center" >
       <CalendarIcon size={36} color={"#0A2647"}/>
       <Text>Meetings</Text>
     </TouchableOpacity>

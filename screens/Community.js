@@ -4,6 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native'
 import PostCard from '../components/community/PostCard'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CalendarIcon, HomeIcon, SquaresPlusIcon, UserIcon } from 'react-native-heroicons/mini'
  
 const Community = () => {
     const [task,setTask] = useState("");
@@ -51,20 +52,25 @@ const Community = () => {
     },[])
   return (
     <SafeAreaView>
-            <View className='pt-5 pb-5 justify-center items-center'>
-                <Text className='font-bold'>Community</Text>
+            <View className='pt-2 pb-5 justify-center items-center'>
+            <View className="flex-row items-center">
+        <Text className="pt-1 text-center font-bold text-gray-500 text-2xl pr-3 ">U D A A N</Text>
+        <View><Image source={{uri:"https://cdn-icons-png.flaticon.com/512/3347/3347375.png"}} className="h-10 w-10"/></View>
+        </View>
             </View>
-        <ScrollView className='mb-5'>
+        <ScrollView className='mb-5 pl-1'>
             
-            <View className='flex-row items-center gap-5 pb-5 px-5'>
+            <View className='flex-row items-center gap-7 pb-5 px-5'>
                 <Image 
                 source={{uri:'https://cdn-icons-png.flaticon.com/512/236/236832.png'}}
                 className="h-12 w-12 bg-gray-300 p-4 rounded-full"
                 />
                 <TextInput placeholder="What's on your mind today" className='pl-2 border-solid border-1 w-48 h-3 border-black-100 rounded-xl mb-10 justify-center' onChangeText={text=>{setTask(text)}} value={task}></TextInput>
-                <TouchableOpacity className='bg-blue-300 rounded-xl w-16 h-8 items-center' onPress={()=>handleAddTask()}>
+                <View className="pl-3">
+                <TouchableOpacity className='bg-blue-300 rounded-xl  w-16 h-8 items-center' onPress={()=>handleAddTask()}>
                     <Text className='pt-2'>Post</Text>
                 </TouchableOpacity>
+                </View>
             </View>
                 <View className='w-full bg-gray-300 h-0.5'></View>
                 {taskItems.map((item,index)=>{
@@ -97,7 +103,28 @@ const Community = () => {
             />
             <View className='h-24'></View>
         </ScrollView>
-        
+        <View className="absolute bottom-16 left-0 space-x-9  bg-white w-full pt-2 pl-12  flex-row  h-20">
+    
+    <TouchableOpacity className="flex items-center" >
+      <HomeIcon size={36} color={"#0A2647"}/>
+      <Text>Home</Text>
+    </TouchableOpacity>
+    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("Progress")}}>
+      <CalendarIcon size={36} color={"#0A2647"}/>
+      <Text>FreeLancing</Text>
+    </TouchableOpacity>
+    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("Commu")}}>
+      <SquaresPlusIcon size={36} color={"#0A2647"}/>
+      <Text>Community</Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={()=>{
+      navigation.navigate("User Details");
+    }} className="flex items-center">
+      <UserIcon size={36} color={"#0A2647"}/>
+      <Text>For You</Text>
+    </TouchableOpacity>
+    
+</View>
       
     </SafeAreaView>
   )
