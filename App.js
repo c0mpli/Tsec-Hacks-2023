@@ -13,11 +13,11 @@ import Data5Screen from './screens/Data5Screen';
 
 import Dashboard from './screens/company/Dashboard';
 import Community from './screens/Community';
-<<<<<<< Updated upstream
+
 import AllJobs from './screens/company/AllJobs';
-=======
+
 import InvoiceScreen from './screens/InvoiceScreen';
->>>>>>> Stashed changes
+
 
 
 
@@ -28,12 +28,12 @@ export default function App() {
     <NavigationContainer>
     <TailwindProvider>
     <Stack.Navigator>
-<<<<<<< Updated upstream
+
+    
     <Stack.Screen name="AllJ" component={AllJobs} />
-=======
     <Stack.Screen name="Data5" component={Data5Screen} />
     <Stack.Screen name="Invoice" component={InvoiceScreen} />
->>>>>>> Stashed changes
+    
     <Stack.Screen name="Commu" component={Community} />
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Data3" component={Data3Screen} />
