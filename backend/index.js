@@ -121,7 +121,21 @@ app.post('/addjob',(req,res)=>{
     })
     console.log("job added")
     return res.json({status:"ok"})
+})
 
+app.get('/alljobs',(req,res)=>{
+    jobs.find()
+    .then(result=>{
+        res.status(200).json({
+            jobs:result
+        })
+    })
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json({
+            error:err
+        })
+    })
 })
 
 app.post('/donation',async (req,res)=>{
@@ -140,10 +154,6 @@ app.post('/donation',async (req,res)=>{
     console.log("done")
     res.json({"status":"ok"})
 })
-
-app.get('/',(req,res)=>{res.render('index');})
-
-
 
 app.listen(PORT)
 console.log("Listening on port "+PORT)
