@@ -3,18 +3,26 @@ import {SafeAreaView} from 'react-native-safe-area-context'
 
 import React,{useEffect, useLayoutEffect,useState} from 'react'
 import { useNavigation } from '@react-navigation/native'
-import {axios} from 'axios' 
+import axios from 'axios';
 import { TouchableOpacity } from 'react-native'
 
 const AllJobs = () => {
   const [jobs,setJobs] = useState()
+  let headers = {
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+
+}
     async function fetchData(){
-        try {
-            const res = await axios.get(`/alljobs`);
-            console.log("hello")
-          } catch (error) {
-            console.log(error)
-          } 
+        axios
+        .get("http://192.168.0.146:5000/alljobs",headers)
+        .then(function (response) {
+            console.log(response.data);
+        })
+        .catch(error => console.log(error));
+
     } 
 
     useEffect(() => {

@@ -9,12 +9,13 @@ const User = require('./model/user')
 const DonationM = require('./model/donationM');
 const jobs = require('./model/jobs');
 require('dotenv').config()
+var cors = require('cors');
 
 
 const app = express()
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-
+app.use(cors({origin: true, credentials: true}));
 
 const PORT = process.env.PORT || 5500
 const URI = process.env.MONGO_URI

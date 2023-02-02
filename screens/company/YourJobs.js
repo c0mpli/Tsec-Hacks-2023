@@ -4,16 +4,7 @@ import {axios} from 'axios'
 
 
 const YourJobs = () => {
-    const [jobs,setJobs] = useState()
-    async function fetchData(){
-        try {
-            const res = await axios.get(`/alljobs`);
-            console.log("hello")
-          } catch (error) {
-            console.log(error)
-          } 
-    } 
-
+    
     useEffect(() => {
         fetchData()
     }, [])
