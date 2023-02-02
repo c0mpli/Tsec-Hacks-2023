@@ -69,7 +69,16 @@ const Data5Screen = () => {
 }
 
 const printToFile = async () => {
-    let html = PdfCode();
+    const name = await AsyncStorage.getItem('Name')
+    const age = await AsyncStorage.getItem('Age')
+    const mobnum = await AsyncStorage.getItem('Number')
+    const skills = await AsyncStorage.getItem('Skills')
+    let html = PdfCode(
+      name=name,
+      age=age,
+      mobnum=mobnum,
+      skills=skills
+    );
     // On iOS/android prints the given html. On web prints the HTML from the current page.
     try{
       const { uri } = await Print.printToFileAsync({

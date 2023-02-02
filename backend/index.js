@@ -14,9 +14,11 @@ const nodemailer = require("nodemailer");
 
 
 const app = express()
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
 app.use(cors({origin: true, credentials: true}));
+app.use(cors({
+    origin:"*",
+    methods:['GET','POST']
+}))
 
 const PORT = process.env.PORT || 5500
 const URI = process.env.MONGO_URI
@@ -161,7 +163,7 @@ app.post('/addjob',(req,res)=>{
     return res.json({status:"ok"})
 })
 
-app.get('/alljobs',(req,res)=>{
+app.get('/alljobs',cors(),(req,res)=>{
     jobs.find()
     .then(result=>{
         res.status(200).json({

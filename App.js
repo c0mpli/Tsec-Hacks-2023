@@ -32,21 +32,21 @@ export default function App() {
     <TailwindProvider>
     <Stack.Navigator>
 
-    <Stack.Screen name="Job" component={JobScreen} />
-    <Stack.Screen name="Ani2"  component={Ani2Screen} />
     
 
-    <Stack.Screen name="Commu" component={Community} />
 
 
+    <Stack.Screen name="AllJ" component={AllJobs} />
     <Stack.Screen name="Initital" component={InitialScreen} />
+    <Stack.Screen name="Job" component={JobScreen} />
+    <Stack.Screen name="Ani2"  component={Ani2Screen} />
+    <Stack.Screen name="Commu" component={Community} />
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Dash" component={Dashboard} />
     
     
     
-    <Stack.Screen name="AllJ" component={AllJobs} />
     
     
 

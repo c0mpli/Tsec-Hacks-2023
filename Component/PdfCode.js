@@ -1,13 +1,11 @@
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const PdfCode = (
-
-  
-) => `
+const PdfCode = (props) => `
 <html>
 <head>
 
-	<title>Jonathan Doe | Web Designer, Director | name@yourdomain.com</title>
+	<title>${props.name} | Web Designer, Director | ${props.mobnum}</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 	<meta name="keywords" content="" />
@@ -25,7 +23,7 @@ const PdfCode = (
 		<div id="hd">
 			<div class="yui-gc">
 				<div class="yui-u first">
-					<h1>Jonathan Doe</h1>
+					<h1>${props.name}</h1>
 					<h2>Web Designer , Director</h2>
 				</div>
 
@@ -33,7 +31,7 @@ const PdfCode = (
 					<div class="contact-info">
 						<h3><a id="pdf" href="#">Download PDF</a></h3>
 						<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
-						<h3>(313) - 867-5309</h3>
+						<h3>${props.mobnum}</h3>
 					</div><!--// .contact-info -->
 				</div>
 			</div><!--// .yui-gc -->
@@ -61,7 +59,7 @@ const PdfCode = (
 						<div class="yui-u">
 
 								<div class="talent">
-									<h2>Web Design</h2>
+									<h2>${props.skills}</h2>
 									<p>Assertively exploit wireless initiatives rather than synergistic core competencies.	</p>
 								</div>
 
