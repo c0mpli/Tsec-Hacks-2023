@@ -23,10 +23,6 @@ export default function App() {
     <TailwindProvider>
     <Stack.Navigator>
 
-
-
-    <Stack.Screen name="Dash" component={Dashboard} />
-
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Data3" component={Data3Screen} />
     

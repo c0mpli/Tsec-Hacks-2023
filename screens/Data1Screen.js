@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native';
-import {AsyncStorage} from 'react-native-async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
@@ -19,22 +19,12 @@ const Data1Screen = () => {
     const saveName = async()=>{
         try{
           await AsyncStorage.setItem('Name',JSON.stringify(Name))
+          const val = await AsyncStorage.getItem('Name')
+          console.log(val)
         }catch(error){
           console.log(error)
         }
       }
-
-      const retrieveData = async () => {
-        try {
-          const value = await AsyncStorage.getItem('Name');
-          if (value !== null) {
-            // We have data!!
-            console.log(value);
-          }
-        } catch (error) {
-          // Error retrieving data
-        }
-      };
   return (
     <SafeAreaView className="p-2">
 
