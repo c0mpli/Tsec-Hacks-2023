@@ -17,6 +17,7 @@ import Community from './screens/Community';
 import AllJobs from './screens/company/AllJobs';
 
 import InvoiceScreen from './screens/InvoiceScreen';
+import Ani2Screen from './screens/Ani2Screen';
 
 
 
@@ -29,8 +30,12 @@ export default function App() {
     <TailwindProvider>
     <Stack.Navigator>
 
-    
+    <Stack.Screen name="Ani2" 
+    component={Ani2Screen} 
+    options={{presentation:'fullScreenModal', headerShown:false}}
+    />
     <Stack.Screen name="AllJ" component={AllJobs} />
+
     <Stack.Screen name="Data5" component={Data5Screen} />
     <Stack.Screen name="Invoice" component={InvoiceScreen} />
     
