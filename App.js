@@ -30,6 +30,7 @@ export default function App() {
     <NavigationContainer>
     <TailwindProvider>
     <Stack.Navigator>
+    <Stack.Screen name="Commu" component={Community} />
 
     <Stack.Screen name="Initital" component={InitialScreen} />
     <Stack.Screen name="Home" component={HomeScreen} />
@@ -48,7 +49,6 @@ export default function App() {
     <Stack.Screen name="Data5" component={Data5Screen} />
 
     
-    <Stack.Screen name="Commu" component={Community} />
     
     <Stack.Screen name="Data3" component={Data3Screen} />
     
