@@ -87,17 +87,7 @@ const printToFile = async () => {
       })
       .catch(function (error) {
         console.log(error);
-      });
-
-
-      await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
-  
-      set_Name('');
-      setInvoice(dateFormat(now, "ddmmyyhhMss"));
-      Set_Address('');
-      Set_Mobile_No('');
-      
-  
+      });  
     }catch(err){
         Alert.alert("Make shure You have Internet Connection or contact @+91 8530730017");
     }
