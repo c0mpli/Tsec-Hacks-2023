@@ -8,6 +8,7 @@ import Data1Screen from './screens/Data1Screen';
 import Data2Screen from './screens/Data2Screen';
 import Data3Screen from './screens/Data3Screen';
 import Data4Screen from './screens/Data4Screen';
+import Dashboard from './screens/company/Dashboard';
 
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ export default function App() {
     <Stack.Navigator>
 
 
+    <Stack.Screen name="Dash" component={Dashboard} />
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Data2" component={Data2Screen} />
     <Stack.Screen name="Data3" component={Data3Screen} />
