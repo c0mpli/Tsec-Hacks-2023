@@ -16,7 +16,7 @@ import Community from './screens/Community';
 
 import AllJobs from './screens/company/AllJobs';
 
-import InvoiceScreen from './screens/InvoiceScreen';
+
 import Ani2Screen from './screens/Ani2Screen';
 import InitialScreen from './screens/InitialScreen';
 
@@ -32,20 +32,21 @@ export default function App() {
     <Stack.Navigator>
 
     <Stack.Screen name="Initital" component={InitialScreen} />
+    <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Data1" component={Data1Screen} />
     <Stack.Screen name="Dash" component={Dashboard} />
     
-
-    <Stack.Screen name="Home" component={HomeScreen} />
-    <Stack.Screen name="AllJ" component={AllJobs} />
     <Stack.Screen name="Ani2" 
     component={Ani2Screen} 
     options={{presentation:'fullScreenModal', headerShown:false}}
     />
     
+    <Stack.Screen name="AllJ" component={AllJobs} />
+    
+    
 
     <Stack.Screen name="Data5" component={Data5Screen} />
-    <Stack.Screen name="Invoice" component={InvoiceScreen} />
+
     
     <Stack.Screen name="Commu" component={Community} />
     

@@ -7,7 +7,13 @@ import * as Speech from 'expo-speech';
 const InitialScreen = () => {
     const speak = () => {
         const speechOptions ={rate:0.75,language:"en-GB"}
-        const thingToSay = 'hello, welcome oodan. If you are Visually Impared, click on bottom right corner of your device';
+        const thingToSay = 'Hello!, welcome oodan. If you are Visually Impared, click on bottom right corner of your device';
+        Speech.speak(thingToSay,speechOptions);
+      };
+
+      const speak2 = () => {
+        const speechOptions ={rate:0.75,language:"en-GB"}
+        const thingToSay = 'Please enter your name...., once done click on bottom right corner of your device';
         Speech.speak(thingToSay,speechOptions);
       };
     const navigation = useNavigation();
@@ -55,7 +61,7 @@ const InitialScreen = () => {
 
         </View>
         <TouchableOpacity
-        onPress={()=>{navigation.navigate("Data1")}}
+        onPress={()=>{speak2(); navigation.navigate("Data1")}}
         className="w-40 h-40  absolute bottom-0 right-0"></TouchableOpacity>
     </SafeAreaView>
   )

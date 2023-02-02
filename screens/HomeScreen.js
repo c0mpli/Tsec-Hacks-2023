@@ -9,23 +9,24 @@ import { MagnifyingGlassIcon, MapPinIcon } from 'react-native-heroicons/mini';
 
 
 const HomeScreen = () => {
+  const speak = () => {
+    const speechOptions ={rate:0.75,language:"en-GB"}
+    const thingToSay = 'Welcome to Home Screen';
+    Speech.speak(thingToSay,speechOptions);
+  };
  
   const navigation = useNavigation();
   useLayoutEffect(()=>
   navigation.setOptions({
       headerShown: false,
-  })
+  }),speak(),console.log("homee")
   )
   
 
 
  
   
-  const speak = () => {
-    const speechOptions ={rate:0.75}
-    const thingToSay = 'hello, welcome to our app';
-    Speech.speak(thingToSay,speechOptions);
-  };
+
   return (
     <SafeAreaView className="px-4 pt-4">
         <View>

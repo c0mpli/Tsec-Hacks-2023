@@ -5,9 +5,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Speech from 'expo-speech';
 
 const Data4Screen = () => {
     const [Skills, setSkills] = useState('')
+    const speak = () => {
+        const speechOptions ={rate:0.75,language:"en-GB"}
+        const thingToSay = 'If you have any past job experiences then please list them..... Once done, click on bottom right corner';
+        Speech.speak(thingToSay,speechOptions);
+      };
 
     const navigation = useNavigation();
     useLayoutEffect(()=>
@@ -35,11 +41,16 @@ const Data4Screen = () => {
         value={Skills}
         onChangeText={(Skills)=>{setSkills(Skills)}} placeholder='Insert here' className="text-2xl pl-2 border-solid border-2 w-full h-12 border-gray-400 rounded-xl" />
         </View>
+        <TouchableOpacity className="pt-8 w-full" onPress={()=>navigation.navigate('Data2')} >
+            <View className="bg-[#0A2647]  rounded-xl h-11">
+            <Text className=" text-center  text-white font-semibold  pt-2 text-lg h-8">Continue</Text>
+            </View>
+        </TouchableOpacity>
         <View className="h-full"></View>
     </View>
     <TouchableOpacity 
-    onPress={()=>{navigation.navigate("Data5"); saveName();}}
-    className="absolute  bottom-40 right-0 ">
+    onPress={()=>{speak(); navigation.navigate("Data5"); saveName();}}
+    className="absolute  bottom-52 right-0 ">
         <View className=" rounded-full w-48 h-48 "></View>
     </TouchableOpacity>
 

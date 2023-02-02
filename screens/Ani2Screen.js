@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Animatable  from "react-native-animatable"
@@ -10,8 +10,8 @@ const Ani2Screen = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate("Home")
-        },4000);
+            navigation.navigate("Hoo");
+        },3000);
        
     },[]);
   return (
