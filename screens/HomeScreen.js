@@ -6,6 +6,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CalendarIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlayIcon, SquaresPlusIcon, UserIcon } from 'react-native-heroicons/mini';
+import HomeJobCard from '../components/HomeJobCard';
 
 
 const HomeScreen = () => {
@@ -71,30 +72,9 @@ useEffect(() => {
           {jobs && jobs.map(data=>{
           return(
             <>
-            <TouchableOpacity
-          onPress={()=>{navigation.navigate("Job")}}
-          className="pl-1 h-full py-10 bg-[#0A2647] rounded-3xl ">
-            <View className=" h-96  flex items-center rounded-3xl w-96 bg-[#0A2647]">
-              <View className="p-2 pt-8">
-              <Image className="w-28 h-28" source={{uri:"https://cdn-icons-png.flaticon.com/512/5968/5968705.png"}}/>
-              </View>
-              <Text className="text-3xl pt-2 text-white font-bold">{data.title}</Text>
-              <View className="flex-row pt-2 items-center gap-x-1">
-                <MapPinIcon color={"gray"}/> 
-                <Text className="text-xl text-gray-500 font-bold">{data.location}</Text>
-              </View>
-              <View className="flex-row items-center pb-4 pt-6 gap-x-5">
-                <Text className="text-2xl font-semibold text-white">• {data.time}</Text>
-                <Text className="text-2xl font-semibold text-white">• {data.type}</Text>
-                <Text className="text-2xl font-semibold text-white">• {data.pay} LPA</Text>
-              </View>
-              <View className="h-14   w-80 bg-[#0A2647] rounded-full">
-                  <Text className="text-center text-white pt-3 font-bold text-2xl">Click for more details</Text>
-              </View>
-
-            </View>
-
-          </TouchableOpacity>
+            <HomeJobCard 
+            title={data.title}
+            />
             </>
           )
         })}
