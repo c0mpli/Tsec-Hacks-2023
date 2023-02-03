@@ -23,13 +23,12 @@ const AllJobs = () => {
 }
     async function fetchData(){
         axios
-        .get("http://192.168.0.107:5000/alljobs",headers)
+        .get("http://192.168.0.107:5500/alljobs",headers)
         .then(function (response) {
             setJobs(response.data.jobs);
             console.log(jobs)
         })
         .catch(error => console.log(error));
-
     } 
 
     useEffect(() => {

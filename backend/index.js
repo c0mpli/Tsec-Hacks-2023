@@ -146,14 +146,18 @@ app.post('/isauth',(req,res)=>{
 
 
 app.post('/addjob',(req,res)=>{
-    var {title,name,logo,desc,pay,location} = req.body;
+    var {title,name,logo,desc,pay,location,respo,type,time} = req.body;
     job = jobs.create({
         logo:logo,
         companyName:name,
         jobTitle:title,
         jobDescription:desc,
         pay:pay,
-        location:location
+        location:location,
+        jobResponsibilities:respo,
+        type:type,
+        time:time,
+
     })
     console.log("job added")
     return res.json({status:"ok"})
