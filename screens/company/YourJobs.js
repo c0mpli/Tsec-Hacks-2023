@@ -18,17 +18,18 @@ const YourJobs = () => {
       headerShown: false,
   })
   )
-    const handleClick =()=>{
-      axios.post('http://192.168.0.155:5500/addjob',{
-        JobTitle:JobTitle,
-        jobDescription:Desc,
+    const handleClick =async()=>{
+      console.log(JobTitle,Desc,Salary,Location,Res)
+      await axios.post('http://192.168.0.107:5500/addjob',{
+        title:JobTitle,
+        desc:Desc,
         pay:Salary,
         location:Location,
-        logo:'',
-        CompanyName:'Udaan',
+        logo:'abcd',
+        name:'Udaan',
         type:'Remote',
         time:'Part time',
-        jobResponsibilites:''
+        respo:Res,
       })
       
     }

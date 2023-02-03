@@ -28,11 +28,9 @@ const jobSchema = new Schema ({
     },
     jobDescription:{
         type: String,
-        required: true,
     },
     jobResponsibilities:{
         type:String,
-        required:true,
     },
     pay:{
         type: Number,
