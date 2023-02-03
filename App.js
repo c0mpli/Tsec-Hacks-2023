@@ -26,6 +26,10 @@ import Job2Screen from './screens/Job2Screen';
 import FyScreen from './screens/FyScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import SettingScreen from './screens/SettingScreen';
+import Merch from './screens/Merch';
+import Games from './screens/Games';
+import RepeatAfterMe from './screens/RepeatAfterMe';
+import MatchTheFaces from './screens/MatchTheFaces';
 
 
 
@@ -56,7 +60,7 @@ export default function App() {
 
     <Stack.Screen name="Ani2"  component={Ani2Screen} />
     <Stack.Screen name="Commu" component={Community} />
-
+    <Stack.Screen name="mu" component={Merch} />
 
     <Stack.Screen name="Profile" component={ProfileScreen} />
     <Stack.Screen name="Initial" component={InitialScreen} />
@@ -67,7 +71,9 @@ export default function App() {
     <Stack.Screen name="Dash" component={Dashboard} />
     
     <Stack.Screen name="Free" component={FreeScreen} />
-    
+    <Stack.Screen name="Game" component={Games} />
+    <Stack.Screen name="ram" component={RepeatAfterMe} />
+    <Stack.Screen name="mtf" component={MatchTheFaces} />
     
     
 

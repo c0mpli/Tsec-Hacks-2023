@@ -135,17 +135,6 @@ const FreeScreen = () => {
             </TouchableOpacity>
         </ScrollView>
         </View>
-
-
-
-
-
-
-        
-
-
-
-        
     </ScrollView>
     </SafeAreaView>
   )
