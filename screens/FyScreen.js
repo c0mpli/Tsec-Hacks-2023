@@ -28,8 +28,8 @@ const FyScreen = (ur) => {
                     source={require("../assets/suitcase.png")}
                      />
                      </View>
-                    <Text className="pl-12 pt-7 text-white  text-2xl font-bold">
-                        Jobs
+                    <Text className="pl-7 pt-7 text-white  text-2xl font-bold">
+                        Schemes
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity 

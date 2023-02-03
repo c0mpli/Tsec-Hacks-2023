@@ -29,7 +29,9 @@ const Dashboard = () => {
 
       </View> 
       <View className="px-4 pt-6  ">
-      <View className="h-24 w-full flex-row items-center bg-[#BFEAF5] rounded-2xl ">
+      <TouchableOpacity
+      onPress={()=>{navigation.navigate("Your")}}
+      className="h-24 w-full flex-row items-center bg-[#BFEAF5] rounded-2xl ">
         <View className="">
         <Text className="text-3xl pl-4  font-bold">
           Post a new Job
@@ -40,7 +42,7 @@ const Dashboard = () => {
         <PlusIcon size={40} color={"#0A2647"}/>
         </View>
 
-      </View>
+      </TouchableOpacity>
 
       <View className="flex-row items-center pt-6">
       <Text className=" text-3xl font-bold"> Stastics</Text>
@@ -126,7 +128,9 @@ const Dashboard = () => {
       <PlusIcon size={36} color={"#0A2647"}/>
       <Text>Create a Job</Text>
     </TouchableOpacity>
-    <TouchableOpacity className="flex items-center">
+    <TouchableOpacity
+    onPress={()=>{navigation.navigate("Profile")}}
+    className="flex items-center">
       <UserIcon size={36} color={"#0A2647"}/>
       <Text>Profile</Text>
     </TouchableOpacity>

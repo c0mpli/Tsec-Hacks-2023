@@ -9,41 +9,33 @@ import { CalendarIcon, HomeIcon, SquaresPlusIcon, UserIcon } from 'react-native-
 
 
 const data =[
+   
     {
-        firstname:"Kresha",
-        lastname:"Mehta",
-        occupation:"student",
-        age:"20",
-        PhotoURL:"https://img.freepik.com/premium-photo/lhasa-apso-4-years-old-dog-portrait-isolated_191971-1661.jpg?w=2000",
-        id: 123,
-        quote:"It doesnot matter how slowly you go as long as you dont stop"
-    },
-    {
-        firstname:"Sanjay",
-        lastname:"Mehta",
-        occupation:"student",
+        firstname:"Nirmaya",
+        lastname:"Health Insurance Scheme",
+        occupation:"Nirmaya",
         age:"20",
         PhotoURL:"https://petlandbeavercreek.com/wp-content/uploads/2022/04/2325560_800.jpg",
         id: 123,
-        quote:"Your goals are the roadmaps that will guide you and show you what is possible for your life"
+        quote:"This scheme is to provide affordable Health Insurance to persons with Autism, Cerebral Palsy, Mental Retardation and Multiple Disabilities."
     },
     {
-        firstname:"rekha",
-        lastname:"Mehta",
+        firstname:"Sahyogi",
+        lastname:"Caregiver traning scheme",
         occupation:"student",
         age:"20",
         PhotoURL:"https://img.freepik.com/premium-photo/lhasa-apso-4-years-old-dog-portrait-isolated_191971-1661.jpg?w=2000",
         id: 123,
-        quote:"A bend in the road is not the end of the road. Unless you fail to make the turn."
+        quote:"A scheme  to set up Caregiver Cells (CGCs) for training and creating skilled workforce of caregivers to care for Person with Disabilities (PwD) and their families."
     },
     {
-        firstname:"vishesh",
-        lastname:"Mehta",
+        firstname:"GyanPrabha",
+        lastname:"Educational support",
         occupation:"student",
         age:"20",
         PhotoURL:"https://img.freepik.com/premium-photo/lhasa-apso-4-years-old-dog-portrait-isolated_191971-1661.jpg?w=2000",
         id: 123,
-        quote:"There is no greater disability in society than the inability to see a person as more"
+        quote:"A scheme to encourage people with Autism, Cerebral Palsy, Mental Retardation and Multiple Disabilities for pursuing educational/ vocational courses."
     },
 ];
 
@@ -57,7 +49,9 @@ const SettingScreen = () => {
   )
   return (
     <SafeAreaView >
-        <View className="pt-12"  >
+        <Text className="text-3xl text-center font-bold pt-4">Government Schemes</Text>
+        <View className="pt-8"  >
+            
       <Swiper 
       stackSize={5}
       cardIndex={0}
@@ -67,8 +61,9 @@ const SettingScreen = () => {
       cards={data}
       renderCard={(card) => (
         <View key={card.id} className=" bg-[#0A2647]  relative  h-3/4  rounded-xl">
-            
-            <Text className="text-white text-5xl pt-32 font-bold px-8 text-center">
+            <Text className="text-white text-5xl pt-10 font-bold px-8 text-center">{card.firstname}</Text>
+            <Text className="text-white text-xl pt-6  px-8 text-center">{card.lastname}</Text>
+            <Text className="text-white text-3xl pt-10 font-semibold px-8 text-center">
                 {card.quote}
              </Text>
             

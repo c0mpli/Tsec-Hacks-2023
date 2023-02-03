@@ -26,6 +26,9 @@ import Job2Screen from './screens/Job2Screen';
 import FyScreen from './screens/FyScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import SettingScreen from './screens/SettingScreen';
+import DisabilityScreen from './screens/SettingScreen';
+import ChoiceScreen from './screens/ChoiceScreen';
+import LoginScreen from './screens/LoginScreen';
 
 
 
@@ -37,10 +40,12 @@ export default function App() {
     <NavigationContainer>
     <TailwindProvider>
     <Stack.Navigator>
-
-    
     <Stack.Screen name="Initital" component={InitialScreen} />
+    <Stack.Screen name="Choice" component={ChoiceScreen} />
     <Stack.Screen name="Home" component={HomeScreen} />
+    
+    
+    <Stack.Screen name="Login" component={LoginScreen} />
     <Stack.Screen name="Job2" component={Job2Screen} />
     <Stack.Screen name="Job" component={JobScreen} />
     <Stack.Screen name="Fy" component={FyScreen} />
@@ -79,6 +84,7 @@ export default function App() {
     
     <Stack.Screen name="Data2" component={Data2Screen} />
     <Stack.Screen name="Data4" component={Data4Screen} />
+    
     
     
     

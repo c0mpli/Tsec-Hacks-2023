@@ -111,7 +111,7 @@ const Community = () => {
       <HomeIcon size={36} color={"#0A2647"}/>
       <Text>Home</Text>
     </TouchableOpacity>
-    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("Progress")}}>
+    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("Free")}}>
       <CalendarIcon size={36} color={"#0A2647"}/>
       <Text>FreeLancing</Text>
     </TouchableOpacity>
@@ -120,7 +120,7 @@ const Community = () => {
       <Text>Community</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={()=>{
-      navigation.navigate("User Details");
+      navigation.navigate("Fy");
     }} className="flex items-center">
       <UserIcon size={36} color={"#0A2647"}/>
       <Text>For You</Text>
