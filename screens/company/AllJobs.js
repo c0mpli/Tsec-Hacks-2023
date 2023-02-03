@@ -19,11 +19,10 @@ const AllJobs = () => {
 }
     async function fetchData(){
         axios
-<<<<<<< Updated upstream
         .get("http://192.168.0.107:5500/alljobs",headers)
-=======
-        .get("http://192.168.0.155:5500/alljobs",headers)
->>>>>>> Stashed changes
+
+        //.get("http://192.168.0.155:5500/alljobs",headers)
+
         .then(function (response) {
             setJobs(response.data.jobs);
             console.log(jobs)
