@@ -11,14 +11,19 @@ const AllJobs = () => {
   const [jobs,setJobs] = useState()
   let headers = {
     headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    }
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Headers':
+        'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+      'Access-Control-Allow-Methods': 'OPTIONS,POST',
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Origin': '*',
+      'X-Requested-With': '*',
+    },
 
 }
     async function fetchData(){
         axios
-        .get("http://192.168.0.143:5000/alljobs",headers)
+        .get("http://192.168.0.107:5000/alljobs",headers)
         .then(function (response) {
             setJobs(response.data.jobs);
             console.log(jobs)

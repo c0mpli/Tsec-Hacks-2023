@@ -14,11 +14,7 @@ const nodemailer = require("nodemailer");
 
 
 const app = express()
-app.use(cors({origin: true, credentials: true}));
-app.use(cors({
-    origin:"*",
-    methods:['GET','POST']
-}))
+app.use(cors({origin:"*",methods:['GET','POST']}))
 
 const PORT = process.env.PORT || 5500
 const URI = process.env.MONGO_URI
