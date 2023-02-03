@@ -6,6 +6,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CalendarIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlayIcon, SquaresPlusIcon, UserIcon } from 'react-native-heroicons/mini';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const HomeScreen = () => {
@@ -16,11 +17,13 @@ const HomeScreen = () => {
   };
  
   const navigation = useNavigation();
+
   useLayoutEffect(()=>
   navigation.setOptions({
       headerShown: false,
   }),speak()
   )
+<<<<<<< Updated upstream
   const [jobs,setJobs] = useState()
   let headers = {
     headers: {
@@ -32,6 +35,15 @@ const HomeScreen = () => {
       'Access-Control-Allow-Origin': '*',
       'X-Requested-With': '*',
     },
+=======
+  const callName=async()=>{
+    const name = await AsyncStorage.getItem('Name') || "User"
+    console.log(name)
+  }
+    useEffect(()=>{
+      callName()
+    })
+>>>>>>> Stashed changes
 
 }
   async function fetchData(){

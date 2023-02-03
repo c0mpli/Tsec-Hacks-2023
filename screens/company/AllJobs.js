@@ -6,24 +6,24 @@ import { useNavigation } from '@react-navigation/native'
 import axios from 'axios';
 import { TouchableOpacity } from 'react-native'
 import JobCard from '../../components/community/JobCard';
+import { CalendarIcon, HomeIcon, PlusIcon, UserIcon } from 'react-native-heroicons/mini';
 
 const AllJobs = () => {
   const [jobs,setJobs] = useState()
   let headers = {
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers':
-        'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
-      'Access-Control-Allow-Methods': 'OPTIONS,POST',
-      'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Origin': '*',
-      'X-Requested-With': '*',
-    },
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
 
 }
     async function fetchData(){
         axios
+<<<<<<< Updated upstream
         .get("http://192.168.0.107:5500/alljobs",headers)
+=======
+        .get("http://192.168.0.155:5500/alljobs",headers)
+>>>>>>> Stashed changes
         .then(function (response) {
             setJobs(response.data.jobs);
             console.log(jobs)
@@ -34,6 +34,7 @@ const AllJobs = () => {
     useEffect(() => {
         fetchData()
     }, [])
+
     const navigation = useNavigation()
     useLayoutEffect(()=>{
         navigation.setOptions({
@@ -43,8 +44,8 @@ const AllJobs = () => {
   return (
     <SafeAreaView>
     <View className='items-start'>
-      <View>
-      <TextInput placeholder='Search Jobs' className='pb-5 bg-gray-300 w-64 rounded-full text-center	pt-5' ></TextInput>
+      <View className="pl-5">
+      <TextInput placeholder='Search Jobs' className='pb-5 bg-gray-300 w-96 rounded-full text-center	pt-5' ></TextInput>
       </View>
         
       {
@@ -65,6 +66,8 @@ const AllJobs = () => {
         })
       }
       </View>
+      <View className="h-full"></View>
+    
     </SafeAreaView>
   )
 }
