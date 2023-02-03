@@ -57,7 +57,7 @@ const SettingScreen = () => {
   )
   return (
     <SafeAreaView >
-        <View  >
+        <View className="pt-12"  >
       <Swiper 
       stackSize={5}
       cardIndex={0}
@@ -75,32 +75,9 @@ const SettingScreen = () => {
         </View>  
      )} 
       />
-      <View className="h-full"></View>
+
         </View>
-        <View className="absolute bottom-0 left-0 space-x-9  bg-white w-full pt-2 pl-12  flex-row  h-20">
-    
-    <TouchableOpacity
-    onPress={()=>{navigation.navigate("Home")}}
-    className="flex items-center" >
-      <HomeIcon size={36} color={"#0A2647"}/>
-      <Text>Home</Text>
-    </TouchableOpacity>
-    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("Progress")}}>
-      <CalendarIcon size={36} color={"#0A2647"}/>
-      <Text>FreeLancing</Text>
-    </TouchableOpacity>
-    <TouchableOpacity className="flex items-center" onPress={()=>{navigation.navigate("Commu")}}>
-      <SquaresPlusIcon size={36} color={"#0A2647"}/>
-      <Text>Community</Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={()=>{
-      navigation.navigate("User Details");
-    }} className="flex items-center">
-      <UserIcon size={36} color={"#0A2647"}/>
-      <Text>For You</Text>
-    </TouchableOpacity>
-    
-</View>
+        
     </SafeAreaView>
   )
 }

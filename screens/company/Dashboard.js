@@ -108,21 +108,23 @@ const Dashboard = () => {
 
       </ScrollView>
 
-      <View className="absolute bottom-0 left-0 space-x-12  bg-white w-full pt-2 pl-12  flex-row  h-20">
+      <View className="absolute bottom-0 left-2 space-x-10  bg-white w-full pt-2 pl-12  flex-row  h-20">
     
     <TouchableOpacity className="flex items-center" >
       <HomeIcon size={36} color={"#0A2647"}/>
       <Text>Home</Text>
     </TouchableOpacity>
     <TouchableOpacity 
-    
+    onPress={()=>{navigation.navigate("AllJ")}}
     className="flex items-center" >
       <CalendarIcon size={36} color={"#0A2647"}/>
-      <Text>Meetings</Text>
+      <Text>All Jobs</Text>
     </TouchableOpacity>
-    <TouchableOpacity className="flex items-center" >
-      <PlayIcon size={36} color={"#0A2647"}/>
-      <Text>Clients</Text>
+    <TouchableOpacity
+    onPress={()=>{navigation.navigate("Your")}}
+    className="flex items-center" >
+      <PlusIcon size={36} color={"#0A2647"}/>
+      <Text>Create a Job</Text>
     </TouchableOpacity>
     <TouchableOpacity className="flex items-center">
       <UserIcon size={36} color={"#0A2647"}/>

@@ -15,6 +15,7 @@ import Dashboard from './screens/company/Dashboard';
 import Community from './screens/Community';
 
 import AllJobs from './screens/company/AllJobs';
+import YourJobs from './screens/company/YourJobs';
 
 
 import Ani2Screen from './screens/Ani2Screen';
@@ -41,7 +42,8 @@ export default function App() {
     <Stack.Screen name="Job2" component={Job2Screen} />
     <Stack.Screen name="Job" component={JobScreen} />
     <Stack.Screen name="Fy" component={FyScreen} />
-    
+
+    <Stack.Screen name="Your" component={YourJobs} />
 
 
     
