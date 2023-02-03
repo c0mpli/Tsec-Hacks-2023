@@ -37,6 +37,7 @@ export default function App() {
     <TailwindProvider>
     <Stack.Navigator>
 
+    <Stack.Screen name="AllJ" component={AllJobs} />
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Job2" component={Job2Screen} />
     <Stack.Screen name="Job" component={JobScreen} />
@@ -49,7 +50,6 @@ export default function App() {
 
 
 
-    <Stack.Screen name="AllJ" component={AllJobs} />
     <Stack.Screen name="Initital" component={InitialScreen} />
 
     <Stack.Screen name="Ani2"  component={Ani2Screen} />
