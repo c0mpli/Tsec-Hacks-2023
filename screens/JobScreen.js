@@ -6,7 +6,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CalendarIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlayIcon, SquaresPlusIcon, UserIcon } from 'react-native-heroicons/mini';
-
+import axios from 'axios'
 
 const JobScreen = () => {
     const speak = () => {
@@ -21,6 +21,22 @@ const JobScreen = () => {
           headerShown: false,
       }),speak()
       )
+
+      function sendEmail(){
+        axios.post('http://192.168.0.146:5500/sendemail', {
+        path:'../resume.pdf',
+        subject:"New applicant to your job posting",
+        description:"Congratulations, you have a new applicant. Here is his resume.",
+        filename:"Resume.pdf"
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      }
+
   return (
     <SafeAreaView>
         <View className="px-6  pt-6">
@@ -51,7 +67,10 @@ const JobScreen = () => {
               </View>
 
         </View>
-        <TouchableOpacity className="pt-8 w-full" onPress={()=>{navigation.navigate('Ani2')}} >
+        <TouchableOpacity className="pt-8 w-full" onPress={()=>{
+          sendEmail()
+          navigation.navigate('Ani2')}
+          } >
             <View className="bg-[#0A2647]  rounded-xl h-11">
             <Text className=" text-center  text-white font-semibold  pt-2 text-lg h-8">Apply Now</Text>
             </View>

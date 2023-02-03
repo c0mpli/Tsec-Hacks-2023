@@ -26,7 +26,7 @@ const HomeScreen = () => {
   )
 
   const [jobs,setJobs] = useState()
-  const [name,setName] = useState()
+  const [name,setName] = useState('User')
   let headers = {
     headers: {
       'Content-Type': 'application/json',

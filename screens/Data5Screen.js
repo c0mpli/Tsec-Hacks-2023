@@ -85,18 +85,7 @@ const printToFile = async () => {
         html
       });
       console.log('File has been saved to:', uri);
-      axios.post('http://192.168.0.146:5000/sendemail', {
-        path:uri,
-        subject:"New applicant to your job posting",
-        description:"Congratulations, you have a new applicant. Here is his resume.",
-        filename:"Resume.pdf"
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });  
+        
     }catch(err){
         Alert.alert("Make shure You have Internet Connection or contact @+91 8530730017");
     }
