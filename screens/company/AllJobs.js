@@ -19,7 +19,7 @@ const AllJobs = () => {
 }
     async function fetchData(){
         axios
-        .get("http://192.168.0.155:5500/alljobs",headers)
+        .get("http://192.168.0.107:5500/alljobs",headers)
 
         //.get("http://192.168.0.155:5500/alljobs",headers)
 

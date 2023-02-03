@@ -24,14 +24,14 @@ const Job2Screen = () => {
 
 
       function sendEmail(){
-        axios.post('http://192.168.0.146:5500/sendemail', {
+        axios.post('http://192.168.0.107:5500/sendemail', {
         path:'../resume.pdf',
         subject:"New applicant to your job posting",
         description:"Congratulations, you have a new applicant. Here is his resume.",
         filename:"Resume.pdf"
       })
       .then(function (response) {
-        console.log(response);
+        console.log("Email is sent");
       })
       .catch(function (error) {
         console.log(error);

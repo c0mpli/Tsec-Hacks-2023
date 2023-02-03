@@ -16,8 +16,8 @@ const Dashboard = () => {
       <ScrollView>
       <View className='flex-row pt-3 items-center mx-3 space-x-2'>
         <Image 
-        source={{uri:'https://links.papareact.com/wru'}}
-        className="h-14 w-14 bg-gray-300 p-4 rounded-full"
+        source={{uri:"https://cdn-icons-png.flaticon.com/512/3347/3347375.png"}}
+        className="h-14 w-14 bg-white-300 p-4 rounded-full"
         />
         <View className=''>
             <Text className='font-bold text-gray-500 text-sm'>Welcome back</Text>
