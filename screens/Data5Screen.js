@@ -13,7 +13,7 @@ import * as Speech from 'expo-speech';
 
 const Data5Screen = () => {
     const speak = () => {
-        const speechOptions ={rate:0.75,language:"en-GB"}
+        const speechOptions ={rate:0.8,language:"en-GB"}
         const thingToSay = 'Your Resume has been Created You can download it from, For You section';
         Speech.speak(thingToSay,speechOptions);
       };

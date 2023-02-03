@@ -12,7 +12,7 @@ import HomeJobCard from '../components/HomeJobCard'
 
 const HomeScreen = () => {
   const speak = () => {
-    const speechOptions ={rate:0.75,language:"en-GB"}
+    const speechOptions ={rate:0.8,language:"en-GB"}
     const thingToSay = 'Welcome to Home Screen...... You can click on the center of the screen to View job details....You can also swipe left to explore more jobs';
     Speech.speak(thingToSay,speechOptions);
   };

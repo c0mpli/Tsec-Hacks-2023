@@ -10,7 +10,7 @@ import * as Speech from 'expo-speech';
 const Data4Screen = () => {
     const [Skills, setSkills] = useState('')
     const speak = () => {
-        const speechOptions ={rate:0.75,language:"en-GB"}
+        const speechOptions ={rate:0.8,language:"en-GB"}
         const thingToSay = 'If you have any past job experiences then please list them..... Once done, click on bottom right corner';
         Speech.speak(thingToSay,speechOptions);
       };

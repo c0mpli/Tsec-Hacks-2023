@@ -10,7 +10,7 @@ import axios from 'axios'
 
 const Job2Screen = () => {
     const speak = () => {
-        const speechOptions ={rate:0.75,language:"en-GB"}
+        const speechOptions ={rate:0.8,language:"en-GB"}
         const thingToSay = 'The Job Title is,Sales Manager and the location is, Mumbai Central, To apply click on Bottom Center of your screen';
         Speech.speak(thingToSay,speechOptions);
       };

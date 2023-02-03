@@ -9,7 +9,7 @@ import * as Speech from 'expo-speech';
 
 const Data2Screen = () => {
     const speak = () => {
-        const speechOptions ={rate:0.75,language:"en-GB"}
+        const speechOptions ={rate:0.8,language:"en-GB"}
         const thingToSay = 'Please enter your phone number.....  Once done, click on bottom right corner';
         Speech.speak(thingToSay,speechOptions);
       };

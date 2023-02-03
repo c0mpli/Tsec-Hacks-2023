@@ -11,7 +11,7 @@ import * as Speech from 'expo-speech';
 
 const Data1Screen = () => {
     const speak = () => {
-        const speechOptions ={rate:0.75,language:"en-GB"}
+        const speechOptions ={rate:0.8,language:"en-GB"}
         const thingToSay = 'Please enter your age...., once done click on bottom right corner of your device';
         Speech.speak(thingToSay,speechOptions);
       };

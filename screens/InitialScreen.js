@@ -40,7 +40,7 @@ const InitialScreen = () => {
         
         <View className="flex items-center pt-14">
         <View className="flex-row gap-x-12 ">
-        <TouchableOpacity onPress={()=>{navigation.navigate("Dash")}}>
+        <TouchableOpacity onPress={()=>{navigation.navigate("Login")}}>
             <View className="border bg-gray-50 h-36 w-36 rounded-2xl shadow-2xl pt-6  items-center">
             <Image source={require('../assets/hiring.png')} className="h-16 rounded  w-16"/>
                 <Text className="text-xl font-medium pt-2">Hire People</Text>
