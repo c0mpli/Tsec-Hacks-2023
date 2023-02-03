@@ -25,8 +25,8 @@ const Data1Screen = () => {
     const saveName = async()=>{
         try{
           await AsyncStorage.setItem('Name',JSON.stringify(Name))
-          const val = await AsyncStorage.getItem('Name')
-          console.log(val)
+          //const val = await AsyncStorage.getItem('Name')
+          //console.log(val)
         }catch(error){
           console.log(error)
         }
@@ -45,7 +45,7 @@ const Data1Screen = () => {
           }}
         placeholder='Enter your name' className="text-2xl pl-2 border-solid border-2 w-full h-12 border-gray-400 rounded-xl" />
         </View>
-        <TouchableOpacity className="pt-8 w-full" onPress={()=>navigation.navigate('Data2')} >
+        <TouchableOpacity className="pt-8 w-full" onPress={()=>{navigation.navigate('Data2');saveName();}} >
             <View className="bg-[#0A2647]  rounded-xl h-11">
             <Text className=" text-center  text-white font-semibold  pt-2 text-lg h-8">Continue</Text>
             </View>

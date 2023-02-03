@@ -27,7 +27,7 @@ const Data3Screen = () => {
           const val = await AsyncStorage.getItem('Number')
           //const age = await AsyncStorage.getItem('Age')
           //const name = await AsyncStorage.getItem('Name')
-          console.log(val)
+          //console.log(val)
         }catch(error){
           console.log(error)
         }
@@ -43,7 +43,7 @@ const Data3Screen = () => {
         value={Number}
         onChangeText={(Number)=>{setNumber(Number)}} placeholder='Insert here' className="text-2xl pl-2 border-solid border-2 w-full h-12 border-gray-400 rounded-xl" />
         </View>
-        <TouchableOpacity className="pt-8 w-full" onPress={()=>navigation.navigate('Data2')} >
+        <TouchableOpacity className="pt-8 w-full" onPress={()=>{navigation.navigate('Data4');saveName();}} >
             <View className="bg-[#0A2647]  rounded-xl h-11">
             <Text className=" text-center  text-white font-semibold  pt-2 text-lg h-8">Continue</Text>
             </View>

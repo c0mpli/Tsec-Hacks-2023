@@ -39,6 +39,7 @@ export default function App() {
     <Stack.Navigator>
 
     
+    <Stack.Screen name="Initital" component={InitialScreen} />
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Job2" component={Job2Screen} />
     <Stack.Screen name="Job" component={JobScreen} />
@@ -52,7 +53,6 @@ export default function App() {
 
 
 
-    <Stack.Screen name="Initital" component={InitialScreen} />
 
     <Stack.Screen name="Ani2"  component={Ani2Screen} />
     <Stack.Screen name="Commu" component={Community} />

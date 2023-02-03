@@ -26,6 +26,7 @@ const HomeScreen = () => {
   )
 
   const [jobs,setJobs] = useState()
+  const [name,setName] = useState()
   let headers = {
     headers: {
       'Content-Type': 'application/json',
@@ -38,8 +39,9 @@ const HomeScreen = () => {
     },
   }
   
-
   async function fetchData(){
+    const val = await AsyncStorage.getItem('Name')
+    //if(val) setName(JSON.parse(val))
     axios
     .get("http://192.168.0.155:5500/alljobs",headers)
     .then(function (response) {
@@ -62,9 +64,8 @@ const HomeScreen = () => {
       <View className="px-4">
         <View >
           <View className="flex-row items-center">
-          <Text className="text-xl font-semibold ">Hey, Vishesh 👋</Text>
+          <Text className="text-xl font-semibold ">Hey, {name} 👋</Text>
           <View className="flex-row items-center pl-48 ">
-
           <Image source={{uri:'https://cdn-icons-png.flaticon.com/512/236/236832.png'}} className="w-12 h-12 rounded-full"/>
           </View>
           </View>
@@ -79,7 +80,7 @@ const HomeScreen = () => {
           className="pl-1 h-full py-10 bg-[#0A2647] rounded-3xl ">
             <View className=" h-96  flex items-center rounded-3xl w-96 bg-[#0A2647]">
               <View className="p-2 pt-8">
-              <Image className="w-28 h-28" source={{uri:"https://c.static-nike.com/a/images/w_1200,c_limit/bzl2wmsfh7kgdkufrrjq/seo-title.jpg"}}/>
+              <Image className="w-28 h-28" source={{uri:"https://cdn-icons-png.flaticon.com/512/5968/5968705.png"}}/>
               </View>
               <Text className="text-3xl pt-2 text-white font-bold">UI/UX Designer</Text>
               <View className="flex-row pt-2 items-center gap-x-1">
