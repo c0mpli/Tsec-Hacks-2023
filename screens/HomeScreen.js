@@ -8,6 +8,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { CalendarIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlayIcon, SquaresPlusIcon, UserIcon } from 'react-native-heroicons/mini';
 import HomeJobCard from '../components/HomeJobCard';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const HomeScreen = () => {
   const speak = () => {
@@ -17,11 +19,13 @@ const HomeScreen = () => {
   };
  
   const navigation = useNavigation();
+
   useLayoutEffect(()=>
   navigation.setOptions({
       headerShown: false,
   }),speak()
   )
+
   const [jobs,setJobs] = useState()
   let headers = {
     headers: {
@@ -33,6 +37,15 @@ const HomeScreen = () => {
       'Access-Control-Allow-Origin': '*',
       'X-Requested-With': '*',
     },
+  }
+  const callName=async()=>{
+    const name = await AsyncStorage.getItem('Name') || "User"
+    console.log(name)
+  }
+    useEffect(()=>{
+      callName()
+    })
+
 
 }
   async function fetchData(){
