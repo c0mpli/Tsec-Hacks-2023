@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, SafeAreaView, TextInput } from 'react-native'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 
 const YourJobs = () => {
@@ -17,7 +18,20 @@ const YourJobs = () => {
       headerShown: false,
   })
   )
-    
+    const handleClick =()=>{
+      axios.post('http://192.168.0.155:5500/addjob',{
+        JobTitle:JobTitle,
+        jobDescription:Desc,
+        pay:Salary,
+        location:Location,
+        logo:'',
+        CompanyName:'Udaan',
+        type:'Remote',
+        time:'Part time',
+        jobResponsibilites:''
+      })
+      
+    }
 
   return (
     <SafeAreaView>
@@ -66,7 +80,7 @@ const YourJobs = () => {
           }}
         placeholder='Enter your Salary' className="text-2xl pl-2 border-solid border-2 w-full h-12 border-gray-400 rounded-xl" />
         
-        <TouchableOpacity className="pt-4 w-full"  >
+        <TouchableOpacity className="pt-4 w-full"  onPress={handleClick}>
             <View className="bg-[#0A2647]  rounded-xl h-11">
             <Text className=" text-center  text-white font-semibold  pt-2 text-lg h-8">Submit</Text>
             </View>

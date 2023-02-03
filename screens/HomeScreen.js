@@ -6,10 +6,9 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CalendarIcon, HomeIcon, MagnifyingGlassIcon, MapPinIcon, PlayIcon, SquaresPlusIcon, UserIcon } from 'react-native-heroicons/mini';
-import HomeJobCard from '../components/HomeJobCard';
-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import HomeJobCard from '../components/HomeJobCard'
 
 const HomeScreen = () => {
   const speak = () => {
@@ -38,29 +37,22 @@ const HomeScreen = () => {
       'X-Requested-With': '*',
     },
   }
-  const callName=async()=>{
-    const name = await AsyncStorage.getItem('Name') || "User"
-    console.log(name)
-  }
-    useEffect(()=>{
-      callName()
-    })
-
-
+  
 
   async function fetchData(){
     axios
-    .get("http://192.168.0.107:5500/alljobs",headers)
+    .get("http://192.168.0.155:5500/alljobs",headers)
     .then(function (response) {
         setJobs(response.data.jobs);
         console.log(jobs)
     })
     .catch(error => console.log(error));
-} 
+  }
 
-useEffect(() => {
-    fetchData()
-}, [])
+  useEffect(() => {
+      fetchData()
+      console.log(jobs)
+  }, [])
 
  
   
@@ -87,15 +79,15 @@ useEffect(() => {
           className="pl-1 h-full py-10 bg-[#0A2647] rounded-3xl ">
             <View className=" h-96  flex items-center rounded-3xl w-96 bg-[#0A2647]">
               <View className="p-2 pt-8">
-              <Image className="w-28 h-28" source={{uri:"https://cdn-icons-png.flaticon.com/512/5968/5968705.png"}}/>
+              <Image className="w-28 h-28" source={{uri:"https://c.static-nike.com/a/images/w_1200,c_limit/bzl2wmsfh7kgdkufrrjq/seo-title.jpg"}}/>
               </View>
-              <Text className="text-3xl pt-2 text-white font-bold">UX/UI Designer</Text>
+              <Text className="text-3xl pt-2 text-white font-bold">UI/UX Designer</Text>
               <View className="flex-row pt-2 items-center gap-x-1">
                 <MapPinIcon color={"gray"}/> 
                 <Text className="text-xl text-gray-500 font-bold">Bandra West</Text>
               </View>
               <View className="flex-row items-center pb-4 pt-6 gap-x-5">
-                <Text className="text-2xl font-semibold text-white">• Full Time</Text>
+                <Text className="text-2xl font-semibold text-white">• Part Time</Text>
                 <Text className="text-2xl font-semibold text-white">• Remote</Text>
                 <Text className="text-2xl font-semibold text-white">• 6 LPA</Text>
               </View>
@@ -106,8 +98,9 @@ useEffect(() => {
             </View>
 
           </TouchableOpacity>
-          
 
+          
+          
           <TouchableOpacity 
           onPress={()=>{navigation.navigate("Job2")}}
           className="pl-1 h-full py-10 bg-[#0A2647] rounded-3xl ">
@@ -167,7 +160,8 @@ onPress={()=>{
 }}
 className="absolute  h-32 w-32 bottom-0 right-0"></TouchableOpacity>
 
-
     </SafeAreaView>
-  )}
+  )
+
+}
 export default HomeScreen
