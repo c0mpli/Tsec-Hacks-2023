@@ -12,7 +12,7 @@ const InitialScreen = () => {
       };
 
       const speak2 = () => {
-        const speechOptions ={rate:0.8,language:"en-GB"}
+        const speechOptions ={rate:0.79,language:"en-GB"}
         const thingToSay = 'Please enter your disability...., once done click on bottom right corner of your device';
         Speech.speak(thingToSay,speechOptions);
       };
