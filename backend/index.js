@@ -57,7 +57,7 @@ app.post('/sendemail', async (req,res)=>{
   });
   const mailOptions = {
     from: 'jashdoshi99@gmail.com',
-    to: 'gathavishesh@gmail.com',
+    to: 'kreshamehta2826@gmail.com',
     subject: subject,
     text: description,
     attachments:[
